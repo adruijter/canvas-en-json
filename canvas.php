@@ -7,7 +7,7 @@
     height: 480px;
     margin: 20px auto;
 }
-    
+
 #canv2
 {
     border: 1px solid grey;
@@ -29,7 +29,7 @@
 <body>
     <canvas id="canv1">Dit is het canvas element, zie je mij ja of nee?</canvas>
     
-    <canvas id="canv2">Dit is het canvas element, zie je mij ja of nee?</canvas>
+<!--    <canvas id="canv2">Dit is het canvas element, zie je mij ja of nee?</canvas> -->
 
 </body>
 </html>
@@ -87,23 +87,39 @@
     ctx.lineWidth = 0.9;
     ctx.stroke();
     
-    var border = 1.2
+    // Border1 mag niet kleiner zijn dan - Math.PI/2
+    var border1 = 0.5;
+    
+    // Border@ mag niet groter zijn dan 3 * Math.PI/2
+    var border2 = 0.5;
+    
+    var centerX = 500;
+    var centerY = 200;
+    var radius = 100;
     
     ctx.beginPath();
-    ctx.moveTo(350,120);
-    ctx.arc(350,120,40,0,border * Math.PI);
-    ctx.fillStyle = "#aebc3f";
+    ctx.moveTo(centerX, centerY);
+    ctx.arc(centerX, centerY, radius, -Math.PI/2,  border1 * Math.PI );
+    ctx.fillStyle = "white";
     ctx.fill();
-    ctx.lineTo(350,120);
+    ctx.lineTo(centerX, centerY);
     ctx.stroke(); // or context.fill()
     
     ctx.beginPath();
-    ctx.moveTo(350,120);
-    ctx.arc(350,120,40,border * Math.PI, 2 * Math.PI );
-    ctx.fillStyle = "#bc3fae";
+    ctx.moveTo(centerX,centerY);
+    ctx.arc(centerX, centerY, radius,border1 * Math.PI, border2 * Math.PI );
+    ctx.fillStyle = "red";
     ctx.fill();
-    ctx.lineTo(350,120);
+    ctx.lineTo(centerX, centerY);
     ctx.stroke(); // or context.fill()
+    
+    ctx.beginPath();
+    ctx.moveTo(centerX, centerY);
+    ctx.arc(centerX, centerY, radius, border2 * Math.PI, 3/2 * Math.PI);
+    ctx.fillStyle = "blue";
+    ctx.fill();
+    ctx.lineTo(centerX, centerY);
+    ctx.stroke(); // or context.fill()   
     
     
     
