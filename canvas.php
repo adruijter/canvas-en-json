@@ -16,6 +16,12 @@
     height: 80px;
     margin: 20px auto;
 }
+    
+#btn
+    {
+        position: relative;
+        
+    }
 </style>
 
 
@@ -30,7 +36,7 @@
     <canvas id="canv1">Dit is het canvas element, zie je mij ja of nee?</canvas>
     
 <!--    <canvas id="canv2">Dit is het canvas element, zie je mij ja of nee?</canvas> -->
-
+<button id='btn'>Klik op mij voor aantal jongens en meisjes</button>
 </body>
 </html>
 
