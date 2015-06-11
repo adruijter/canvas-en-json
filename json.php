@@ -35,7 +35,17 @@
             {
                 obj = JSON.parse(xmlhttp.responseText);
                 
-                document.getElementById('percentages').innerHTML = obj.aantaljongens + " " + obj.aantalmeisjes;   
+                $stringTekst = "";
+                for (var i = 0; i < obj.persoonsgegevens.length; i++)
+                {
+                    $stringTekst += obj.persoonsgegevens[i].id + " | " +
+                                    obj.persoonsgegevens[i].voornaam + " | " +
+                                    obj.persoonsgegevens[i].tussenvoegsel + " | " +
+                                    obj.persoonsgegevens[i].achternaam + "<br>";
+                                    
+                }
+                
+                document.getElementById('percentages').innerHTML = $stringTekst;   
             }       
         }
         xmlhttp.open("POST", "http://localhost/2014-2015/canvas/bereken.php", true);

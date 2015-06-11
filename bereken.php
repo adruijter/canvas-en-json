@@ -10,7 +10,7 @@ try
     $connection = new PDO("mysql:host=".$serverName.";dbname=".$databaseName, $userName, $password);
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    $queryPrep = $connection->prepare("SELECT `id`, `voornaam`, `tussenvoegsel`,`achternaam` FROM `persoonsgegeven` WHERE `id` < 3");
+    $queryPrep = $connection->prepare("SELECT `id`, `voornaam`, `tussenvoegsel`,`achternaam` FROM `persoonsgegeven`");
     
     $queryPrep->execute();
     
