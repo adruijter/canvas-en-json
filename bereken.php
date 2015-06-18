@@ -23,7 +23,7 @@ try
     
     while ($row = $queryPrep1->fetch())
     {
-        echo $row['aantalvrouwen'];
+        //echo $row['aantalvrouwen'];
     }
     
     
